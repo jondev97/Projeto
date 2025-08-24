@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruzadinha de Animais em Espanhol</title>
+    <link rel="stylesheet" href="/css/cruzadinha.css">
+</head>
+<body>
+    <h1>Cruzadinha de Animais em Espanhol</h1>
+    
+    <div class="instructions">
+        <p>Clique nas pistas para destacar as palavras na cruzadinha. Digite as letras para preencher os espaços. Complete todas as palavras para vencer o jogo!</p>
+        <p>Você pode usar o botão de dica para revelar uma letra, mas isso reduzirá sua pontuação.</p>
+    </div>
+
+    <div class="game-container">
+        <div class="crossword" id="crossword"></div>
+        
+        <div class="clues">
+            <h3>Pistas - Animais em Português</h3>
+            <ul class="clue-list" id="clueList"></ul>
+            
+            <div class="hint-container">
+                <button class="hint-btn" id="hintBtn">Dica (revelar uma letra)</button>
+                <img id="imageHint" class="image-hint" src="" alt="Dica visual">
+            </div>
+            
+            <div class="score" id="score">Pontuação: 100</div>
+        </div>
+    </div>
+    
+    <div class="message" id="message"></div>
+    
+    <div class="controls">
+        <button class="control-btn check" id="checkBtn">Verificar</button>
+        <button class="control-btn reset" id="resetBtn">Reiniciar</button>
+    </div>
+
+    <script src="/js/cruzadinha.js"></script>
+</body>
+</html>

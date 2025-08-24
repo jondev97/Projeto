@@ -1,0 +1,198 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-size: cover;
+    align-items: center;
+
+   
+    justify-content: flex-start; 
+    padding: 30px 10px 20px; 
+    box-sizing: border-box;
+    /*flex-grow: 2; preencher container principal*/
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background-color: #83bdea;
+    font-size: 1.0em;
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px 20px;
+    margin: 0 0 15px; 
+    box-sizing: border-box;
+    color: #fff;
+}
+
+
+header .player {
+    margin: 0 auto;
+}
+
+header span {
+    font-weight: bold;
+}
+
+.back-button {
+    background-color: #d32f2f; /* Azul do botão */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-out;
+    white-space: nowrap;
+}
+
+.back-button:hover {
+    background-color: #d32f2f;
+    transform: translateY(-1px);
+}
+
+.back-button:active {
+    background-color: #d32f2f;
+    transform: translateY(0);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 8px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.card {
+    aspect-ratio: 3/4;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #83bdea;
+    border-radius: 5px;
+    transition: all 400ms ease;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+.back {
+    background-image: url('../imagens/back.png');
+    backface-visibility: hidden;
+}
+
+.reveal-card {
+    transform: rotateY(180deg);
+}
+
+.disabled-card {
+    filter: saturate(0);
+    opacity: 0.5;
+}
+
+
+@media (max-width: 1440px) {
+    .grid { grid-template-columns: repeat(8, 1fr); gap: 8px; }
+}
+
+@media (max-width: 1280px) {
+    .grid { grid-template-columns: repeat(7, 1fr); gap: 7px; max-width: 100%; }
+    header { max-width: 100%; padding: 8px 12px; }
+}
+
+@media (max-width: 1024px) {
+    .grid { grid-template-columns: repeat(6, 1fr); gap: 6px; }
+    header { padding: 6px 10px; font-size: 0.9em; }
+}
+
+@media (max-width: 992px) {
+    .grid { grid-template-columns: repeat(6, 1fr); gap: 6px; }
+}
+
+@media (max-width: 768px) {
+    .grid { grid-template-columns: repeat(5, 1fr); gap: 5px; }
+    header {
+        flex-direction: row; 
+        justify-content: space-between; 
+        text-align: center;
+        padding: 8px;
+    }
+    header .player { 
+        margin: 0;
+    }
+    header span {
+        margin-bottom: 0;
+        font-size: 0.85em;
+    }
+    .back-button {
+        font-size: 0.8em;
+        padding: 6px 10px;
+    }
+    main { padding: 8px; }
+}
+
+@media (max-width: 650px) { 
+    header {
+        flex-direction: column; 
+        align-items: center; 
+        padding: 10px;
+    }
+    header .player {
+        margin-bottom: 5px; 
+    }
+    header span {
+        margin-bottom: 5px;
+    }
+    .back-button {
+        margin-bottom: 10px; 
+    }
+}
+
+
+@media (max-width: 576px) {
+    .grid { grid-template-columns: repeat(4, 1fr); gap: 4px; }
+    header { font-size: 0.75em; padding: 4px; }
+    .back-button { font-size: 0.7em; padding: 5px 8px; }
+    .face { border-width: 1px; }
+}
+
+@media (max-width: 400px) {
+    .grid { grid-template-columns: repeat(3, 1fr); gap: 3px; }
+    main { padding: 5px; }
+    header { font-size: 0.7em; }
+    .back-button { font-size: 0.65em; padding: 4px 6px; }
+}
+
+@media (max-width: 320px) {
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 2px; }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Saudações e Despedidas</title>
+    <link rel="stylesheet" href="/css/jogo_saudacao_despedida.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Complete as frases com saudações e despedidas</h1>
+        
+        <div class="instructions">
+            <p>Arraste e solte a saudação ou despedida correta para completar cada frase.</p>
+        </div>
+        
+        <div class="options-container">
+            </div>
+
+        <div id="game"></div>
+        
+        <button class="btn" onclick="checkAnswers()">Verificar respostas</button>
+         <button class="btn" onclick="window.history.back()">Voltar</button>
+
+        
+        <div id="result"></div>
+        <div id="score"></div>
+    </div>
+
+    <script src="/js/jogo_saudacao_despedida.js"></script>
+</body>
+</html>
